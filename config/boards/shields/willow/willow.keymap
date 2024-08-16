@@ -45,6 +45,8 @@
                 <&bt BT_SEL 2>,
                 <&bt BT_SEL 3>,
                 <&bt BT_SEL 4>;
+
+            tapping-term-ms = <300>;
         };
 
         bootloader_tap: bootloader_tap {
@@ -70,7 +72,7 @@
             #binding-cells = <0>;
             bindings =
                 <&auto_shift_short LS(SEMI) SEMI>,
-                <&auto_shift_short APOSTROPHE APOSTROPHE>;
+                <&auto_shift_short LS(APOSTROPHE) APOSTROPHE>;
 
             tapping-term-ms = <200>;
         };
@@ -97,6 +99,43 @@
             label = "BT_CLEAR_DANCE";
             #binding-cells = <0>;
             bindings = <&none>, <&bt BT_CLR>;
+        };
+    };
+
+    macros {
+        bt_profile_0: bt_profile_0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_SEL 0>;
+            label = "BT_PROFILE_0";
+        };
+
+        bt_profile_1: bt_profile_1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_SEL 1>;
+            label = "BT_PROFILE_1";
+        };
+
+        bt_profile_2: bt_profile_2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 3 &bt BT_DISC 4 &bt BT_SEL 2>;
+            label = "BT_PROFILE_2";
+        };
+
+        bt_profile_3: bt_profile_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 4 &bt BT_SEL 3>;
+            label = "BT_PROFILE_3";
+        };
+
+        bt_profile_4: bt_profile_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_DISC 0 &bt BT_DISC 1 &bt BT_DISC 2 &bt BT_DISC 3 &bt BT_SEL 4>;
+            label = "BT_PROFILE_4";
         };
     };
 
