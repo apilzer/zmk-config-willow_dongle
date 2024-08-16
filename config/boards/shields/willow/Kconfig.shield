@@ -1,0 +1,5 @@
+config SHIELD_WILLOW_DONGLE
+    def_bool $(shields_list_contains,willow_dongle)
+
+config SHIELD_WILLOW
+    def_bool $(shields_list_contains,willow)

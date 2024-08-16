@@ -1,0 +1,9 @@
+#include "willow.dtsi" 
+
+&kscan0 {
+    diode-direction = "col2row";
+    wakeup-source;
+    col-gpios
+        = 
+        ;
+};

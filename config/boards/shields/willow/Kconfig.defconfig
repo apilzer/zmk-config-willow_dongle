@@ -1,0 +1,19 @@
+if SHIELD_WILLOW_DONGLE
+
+config ZMK_KEYBOARD_NAME
+    default "Willow"
+
+config ZMK_SPLIT_ROLE_CENTRAL
+    default y
+
+config ZMK_SLEEP
+    default n
+
+endif
+
+if SHIELD_WILLOW_DONGLE || SHIELD_WILLOW
+
+config ZMK_SPLIT
+    default y
+
+endif
