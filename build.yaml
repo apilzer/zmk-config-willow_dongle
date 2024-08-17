@@ -20,7 +20,9 @@
 include:
   - board: nice_nano_v2
     shield: willow
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: willow_dongle
+    snippet: zmk-usb-logging
   - board: nice_nano_v2
     shield: settings_reset
