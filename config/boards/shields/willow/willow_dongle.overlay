@@ -1,6 +1,3 @@
-#include "willow.dtsi" 
-
-
 / {
     chosen {
         zmk,kscan = &mock_kscan;
