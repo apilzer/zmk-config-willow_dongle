@@ -144,10 +144,10 @@
 
         default_layer {
             bindings = <
-&auto_shift LS(Q) Q  &auto_shift LS(W) W  &auto_shift LS(E) E     &auto_shift LS(R) R  &auto_shift LS(T) T    &auto_shift LS(Y) Y  &auto_shift LS(U) U  &auto_shift LS(I) I          &auto_shift LS(O) O      &auto_shift LS(P) P
-&auto_shift LS(A) A  &auto_shift LS(S) S  &auto_shift LS(D) D     &auto_shift LS(F) F  &auto_shift LS(G) G    &auto_shift LS(H) H  &auto_shift LS(J) J  &auto_shift LS(K) K          &auto_shift LS(L) L      &semi_colon_app_tap
-&auto_shift LS(Z) Z  &auto_shift LS(X) X  &auto_shift LS(C) C     &auto_shift LS(V) V  &auto_shift LS(B) B    &auto_shift LS(N) N  &auto_shift LS(M) M  &auto_shift LS(COMMA) COMMA  &auto_shift LS(DOT) DOT  &enter_dance
-                                          &control_gui_tap_dance  &lt 1 LEFT_GUI       &kp BACKSPACE          &space_tab           &lower_taptoggle     &kp LEFT_ALT
+&kp Q  &kp W  &kp E     &kp R  &kp T    &kp Y  &kp U  &kp I          &kp O      &kp P
+&kp A  &kp S  &kp D     &kp F  &kp G    &kp H  &kp J  &kp K          &kp L      &semi_colon_app_tap
+&kp Z  &kp X  &kp C     &kp V  &kp B    &kp N  &kp M  &kp COMMA      &kp DOT   &enter_dance
+                                  &control_gui_tap_dance  &lt 1 LEFT_GUI  &kp BACKSPACE          &space_tab           &lower_taptoggle  &kp LEFT_ALT
             >;
         };
 
