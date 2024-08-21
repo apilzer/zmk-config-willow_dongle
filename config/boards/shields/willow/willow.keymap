@@ -14,9 +14,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ENTER_DANCE";
             #binding-cells = <0>;
-            bindings =
-                <&auto_shift_short QUESTION ENTER>,
-                <&auto_shift_short LS(ENTER) SLASH>;
+            bindings = <&kp ENTER>, <&kp SLASH>;
 
             tapping-term-ms = <200>;
         };
@@ -70,9 +68,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "SEMI_COLON_APP_TAP";
             #binding-cells = <0>;
-            bindings =
-                <&auto_shift_short LS(SEMI) SEMI>,
-                <&auto_shift_short LS(APOSTROPHE) APOSTROPHE>;
+            bindings = <&kp SEMI>, <&kp APOSTROPHE>;
 
             tapping-term-ms = <200>;
         };
@@ -99,6 +95,16 @@
             label = "BT_CLEAR_DANCE";
             #binding-cells = <0>;
             bindings = <&none>, <&bt BT_CLR>;
+        };
+
+        hrm: hrm {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HRM";
+            bindings = <&kp>, <&kp>;
+
+            #binding-cells = <2>;
+            tapping-term-ms = <150>;
+            flavor = "tap-preferred";
         };
     };
 
@@ -144,28 +150,28 @@
 
         default_layer {
             bindings = <
-&auto_shift LS(Q) Q  &auto_shift LS(W) W  &auto_shift LS(E) E     &auto_shift LS(R) R  &auto_shift LS(T) T    &auto_shift LS(Y) Y  &auto_shift LS(U) U  &auto_shift LS(I) I          &auto_shift LS(O) O      &auto_shift LS(P) P
-&auto_shift LS(A) A  &auto_shift LS(S) S  &auto_shift LS(D) D     &auto_shift LS(F) F  &auto_shift LS(G) G    &auto_shift LS(H) H  &auto_shift LS(J) J  &auto_shift LS(K) K          &auto_shift LS(L) L      &semi_colon_app_tap
-&auto_shift LS(Z) Z  &auto_shift LS(X) X  &auto_shift LS(C) C     &auto_shift LS(V) V  &auto_shift LS(B) B    &auto_shift LS(N) N  &auto_shift LS(M) M  &auto_shift LS(COMMA) COMMA  &auto_shift LS(DOT) DOT  &enter_dance
-                                          &control_gui_tap_dance  &lt 1 LEFT_GUI       &kp BACKSPACE          &space_tab           &lower_taptoggle     &kp LEFT_ALT
+&kp Q              &kp W                &kp E                   &kp R            &kp T            &kp Y       &kp U             &kp I         &kp O    &kp P
+&hrm LEFT_SHIFT A  &hrm LEFT_CONTROL S  &hrm LEFT_ALT D         &hrm LEFT_GUI F  &kp G            &kp H       &kp J             &kp K         &kp L    &semi_colon_app_tap
+&hrm LEFT_SHIFT Z  &hrm LEFT_CONTROL X  &hrm LEFT_ALT C         &hrm LEFT_GUI V  &kp B            &kp N       &kp M             &kp COMMA     &kp DOT  &enter_dance
+                                        &control_gui_tap_dance  &lt 1 LEFT_GUI   &kp BACKSPACE    &space_tab  &lower_taptoggle  &kp LEFT_ALT
             >;
         };
 
         raise_layer {
             bindings = <
-&auto_shift TILDE ESCAPE           &kp K_MUTE                         &kp C_VOLUME_DOWN                  &kp C_VOLUME_UP                    &bluetooth_tap           &bt_clear_dance                    &kp LEFT_PARENTHESIS   &kp RIGHT_PARENTHESIS                      &auto_shift LS(MINUS) MINUS                  &auto_shift LS(EQUAL) EQUAL
-&auto_shift LS(NUMBER_1) NUMBER_1  &auto_shift LS(NUMBER_2) NUMBER_2  &auto_shift LS(NUMBER_3) NUMBER_3  &auto_shift LS(NUMBER_4) NUMBER_4  &auto_shift LS(N5) N5    &auto_shift LS(NUMBER_6) NUMBER_6  &auto_shift LS(N7) N7  &auto_shift LS(N8) N8                      &auto_shift LS(N9) N9                        &auto_shift LS(N0) N0
-&kp LEFT_SHIFT                     &trans                             &trans                             &trans                             &bootloader_tap          &kp LEFT_BRACE                     &kp RIGHT_BRACE        &auto_shift LS(LEFT_BRACKET) LEFT_BRACKET  &auto_shift LS(RIGHT_BRACKET) RIGHT_BRACKET  &auto_shift LS(BACKSLASH) BACKSLASH
-                                                                      &trans                             &trans                             &kp BACKSPACE            &kp TAB                            &to 3                  &trans
+&auto_shift TILDE ESCAPE  &kp K_MUTE        &kp C_VOLUME_DOWN  &kp C_VOLUME_UP  &bluetooth_tap     &bt_clear_dance  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp MINUS          &kp EQUAL
+&kp NUMBER_1              &kp NUMBER_2      &kp NUMBER_3       &kp NUMBER_4     &kp N5             &kp NUMBER_6     &kp N7                &kp N8                 &kp N9             &kp N0
+&kp LEFT_SHIFT            &kp LEFT_CONTROL  &kp LEFT_ALT       &kp LEFT_GUI     &bootloader_tap    &kp LEFT_BRACE   &kp RIGHT_BRACE       &kp LEFT_BRACKET       &kp RIGHT_BRACKET  &kp BACKSLASH
+                                            &trans             &trans           &kp BACKSPACE      &kp TAB          &none                 &trans
             >;
         };
 
         lower_layer {
             bindings = <
-&trans  &trans    &kp UP_ARROW  &trans     &trans        &bootloader_tap  &auto_shift LS(N7) N7              &auto_shift LS(N8) N8              &auto_shift LS(N9) N9              &trans
-&trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans        &trans           &auto_shift LS(NUMBER_4) NUMBER_4  &auto_shift LS(N5) N5              &auto_shift LS(NUMBER_6) NUMBER_6  &trans
-&trans  &trans    &trans        &trans     &trans        &trans           &auto_shift LS(NUMBER_1) NUMBER_1  &auto_shift LS(NUMBER_2) NUMBER_2  &auto_shift LS(NUMBER_3) NUMBER_3  &trans
-                  &trans        &to 0      &kp DELETE    &kp SPACE        &to 0                              &auto_shift LS(N0) N0
+&trans  &trans    &kp UP_ARROW  &trans     &trans        &bootloader_tap  &kp N7        &kp N8        &kp N9        &trans
+&trans  &kp LEFT  &kp DOWN      &kp RIGHT  &trans        &trans           &kp NUMBER_4  &kp N5        &kp NUMBER_6  &trans
+&trans  &trans    &trans        &trans     &trans        &trans           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans
+                  &trans        &to 0      &kp DELETE    &kp SPACE        &to 0         &kp N0
             >;
         };
     };
